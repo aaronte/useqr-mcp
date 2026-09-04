@@ -38,7 +38,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsc && node --input-type=module -e \"import fs from 'node:fs'; const p='dist/cli.js'; fs.writeFileSync(p, '#!/usr/bin/env node\\n'+fs.readFileSync(p,'utf8'), { mode: 0o755 });\"",
+    "build": "tsc && node --input-type=module -e \"import fs from 'node:fs'; const p='dist/cli.js'; fs.writeFileSync(p, '#!/usr/bin/env node\\n'+fs.readFileSync(p,'utf8')); fs.chmodSync(p, 0o755);\"",
     "prepare": "npm run build",
     "test": "vitest run",
     "prepublishOnly": "npm run build"
