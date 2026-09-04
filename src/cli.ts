@@ -12,20 +12,20 @@ import { startMcpServer } from "./mcp.js";
 const HELP = `useqr-mcp. Static QR codes for agents. No API key.
 
 Generate a PNG:
-  npx -y github:aaronte/useqr-mcp generate --data https://example.com --out code.png
+  npx -y useqr-mcp generate --data https://example.com --out code.png
 
 Generate SVG on stdout:
-  npx -y github:aaronte/useqr-mcp generate --data https://example.com --format svg
+  npx -y useqr-mcp generate --data https://example.com --format svg
 
 Start the MCP stdio server (default when you pass no args, or pass mcp):
-  npx -y github:aaronte/useqr-mcp
+  npx -y useqr-mcp
 
 Cursor / Claude stdio install:
 {
   "mcpServers": {
     "useqr": {
       "command": "npx",
-      "args": ["-y", "github:aaronte/useqr-mcp"]
+      "args": ["-y", "useqr-mcp"]
     }
   }
 }

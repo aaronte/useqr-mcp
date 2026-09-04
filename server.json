@@ -9,6 +9,16 @@
     "url": "https://github.com/aaronte/useqr-mcp",
     "source": "github"
   },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "useqr-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",

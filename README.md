@@ -3,10 +3,22 @@
 Generate a static QR code from any AI agent. No account. No API key.
 
 ```bash
-npx -y github:aaronte/useqr-mcp generate --data https://example.com --out qr.png
+npx -y useqr-mcp generate --data https://example.com --out qr.png
 ```
 
 This repository is the agent-facing QR generator for [useqr.co](https://useqr.co). It writes PNG or SVG locally. Styled dots, logos, and dynamic `/r/{code}` short links stay on the product site.
+
+## Install and discovery
+
+- npm: [`useqr-mcp`](https://www.npmjs.com/package/useqr-mcp)
+- Official MCP registry name: `io.github.aaronte/useqr-mcp`
+- Search: `curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=useqr"`
+
+```bash
+npx -y useqr-mcp
+```
+
+No arguments (or `mcp`) starts the stdio MCP server. Source install still works: `npx -y github:aaronte/useqr-mcp`.
 
 ## MCP
 
@@ -17,7 +29,7 @@ Stdio (works in Cursor, Claude, Copilot, and other clients that spawn a command)
   "mcpServers": {
     "useqr": {
       "command": "npx",
-      "args": ["-y", "github:aaronte/useqr-mcp"]
+      "args": ["-y", "useqr-mcp"]
     }
   }
 }
@@ -59,11 +71,11 @@ stdio-only clients can wrap the hosted server with [`mcp-remote`](https://www.np
 ## CLI
 
 ```bash
-npx -y github:aaronte/useqr-mcp generate --data https://example.com --format svg --out qr.svg
-npx -y github:aaronte/useqr-mcp help
+npx -y useqr-mcp generate --data https://example.com --format svg --out qr.svg
+npx -y useqr-mcp help
 ```
 
-`npx -y github:aaronte/useqr-mcp` with no arguments starts the MCP stdio server.
+`npx -y useqr-mcp` with no arguments starts the MCP stdio server.
 
 ## What this is not
 
