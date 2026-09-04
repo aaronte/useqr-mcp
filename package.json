@@ -1,0 +1,57 @@
+{
+  "name": "useqr-mcp",
+  "version": "1.0.0",
+  "description": "Static QR PNG/SVG generator CLI and MCP server for AI agents. No accounts.",
+  "type": "module",
+  "license": "MIT",
+  "mcpName": "io.github.aaronte/useqr-mcp",
+  "bin": {
+    "useqr-mcp": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "plugin.json",
+    "mcp.json",
+    "server.json",
+    "skills"
+  ],
+  "keywords": [
+    "qr",
+    "qr-code",
+    "mcp",
+    "model-context-protocol",
+    "useqr",
+    "generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronte/useqr-mcp.git"
+  },
+  "homepage": "https://useqr.co/mcp",
+  "bugs": {
+    "url": "https://github.com/aaronte/useqr-mcp/issues"
+  },
+  "author": "Aaron Te",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc && node --input-type=module -e \"import fs from 'node:fs'; const p='dist/cli.js'; fs.writeFileSync(p, '#!/usr/bin/env node\\n'+fs.readFileSync(p,'utf8'), { mode: 0o755 });\"",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.0",
+    "qrcode": "^1.5.4",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
+}
