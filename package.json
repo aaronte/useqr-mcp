@@ -34,6 +34,9 @@
     "url": "https://github.com/aaronte/useqr-mcp/issues"
   },
   "author": "Aaron Te",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20"
   },

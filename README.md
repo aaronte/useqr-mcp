@@ -12,6 +12,7 @@ This repository is the agent-facing QR generator for [useqr.co](https://useqr.co
 
 - npm: [`useqr-mcp`](https://www.npmjs.com/package/useqr-mcp)
 - Official MCP registry name: `io.github.aaronte/useqr-mcp`
+- Hosted remote: `https://useqr.co/api/mcp`
 - Search: `curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=useqr"`
 
 ```bash
@@ -80,6 +81,8 @@ npx -y useqr-mcp help
 ## What this is not
 
 This is not the UseQR product app. Accounts, billing, public pages, and destination edits live at [useqr.co](https://useqr.co). See [useqr.co/mcp](https://useqr.co/mcp) for the hosted server card and product brief.
+
+The live product card uses namespace `co.useqr/mcp`. This OSS listing uses the GitHub namespace `io.github.aaronte/useqr-mcp` and points at the same hosted remote.
 
 ## License
 
