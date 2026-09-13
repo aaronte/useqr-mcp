@@ -87,3 +87,15 @@ The live product card uses namespace `co.useqr/mcp`. This OSS listing uses the G
 ## License
 
 MIT
+
+## Cursor / Grok Bot marketplace
+
+This repo is a Cursor [Agent Plugin](https://agent-plugins.org) (`plugin.json` + `mcp.json` + `skills/`).
+
+To list it in the Cursor / Grok Bot plugin marketplace:
+
+1. Confirm `main` has the plugin manifest, `mcp.json`, skills, and `assets/logo.svg`.
+2. Submit the public repo URL at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
+3. Wait for manual review. Once listed, search for **useqr** in Customize / plugins and install.
+
+Until then, connect the hosted MCP directly: `https://useqr.co/api/mcp`.
