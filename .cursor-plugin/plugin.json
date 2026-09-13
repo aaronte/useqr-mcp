@@ -1,12 +1,10 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "useqr",
   "version": "1.0.0",
   "description": "Static QR PNG/SVG for agents, plus a link to the UseQR designer.",
   "author": {
     "name": "Aaron Te",
-    "email": "aaronjte@gmail.com",
-    "url": "https://useqr.co"
+    "email": "aaronjte@gmail.com"
   },
   "homepage": "https://useqr.co",
   "repository": "https://github.com/aaronte/useqr-mcp",
