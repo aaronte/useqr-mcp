@@ -11,16 +11,16 @@ import { startMcpServer } from "./mcp.js";
 
 const HELP = `useqr-mcp. Static QR codes for agents. No API key.
 
-Generate a PNG:
-  npx -y useqr-mcp generate --data https://example.com --out code.png
+Hosted MCP. Nothing to install:
+{
+  "mcpServers": {
+    "useqr": {
+      "url": "https://useqr.co/api/mcp"
+    }
+  }
+}
 
-Generate SVG on stdout:
-  npx -y useqr-mcp generate --data https://example.com --format svg
-
-Start the MCP stdio server (default when you pass no args, or pass mcp):
-  npx -y useqr-mcp
-
-Cursor / Claude stdio install:
+stdio from npm:
 {
   "mcpServers": {
     "useqr": {
@@ -30,14 +30,24 @@ Cursor / Claude stdio install:
   }
 }
 
-Hosted MCP (no secrets):
+stdio from GitHub, if npm cannot install the published package:
 {
   "mcpServers": {
     "useqr": {
-      "url": "https://useqr.co/api/mcp"
+      "command": "npx",
+      "args": ["-y", "github:aaronte/useqr-mcp"]
     }
   }
 }
+
+Generate a PNG:
+  npx -y useqr-mcp generate --data https://example.com --out code.png
+
+Generate SVG on stdout:
+  npx -y useqr-mcp generate --data https://example.com --format svg
+
+No arguments starts the MCP stdio server. The mcp command does the same.
+  npx -y useqr-mcp
 
 generate flags:
   --data <text>                 required payload
@@ -49,7 +59,7 @@ generate flags:
   --error-correction L|M|Q|H    default M
 
 This package is not the UseQR product app. No accounts, no billing, no dynamic /r/{code} minting.
-Designer and dynamic codes: https://useqr.co
+Designer and dynamic codes are at https://useqr.co
 `;
 
 async function main(argv: string[]): Promise<void> {

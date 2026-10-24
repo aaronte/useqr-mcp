@@ -3,7 +3,7 @@
   "name": "io.github.aaronte/useqr-mcp",
   "title": "useqr-mcp",
   "description": "Static QR PNG/SVG for agents. Designer and dynamic codes live at useqr.co.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://useqr.co",
   "repository": {
     "url": "https://github.com/aaronte/useqr-mcp",
@@ -14,7 +14,7 @@
     {
       "registryType": "npm",
       "identifier": "useqr-mcp",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "transport": {
         "type": "stdio"
       }
