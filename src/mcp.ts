@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -13,12 +15,39 @@ import {
 const SERVER_INSTRUCTIONS =
   "This server generates static QR codes (PNG or SVG) locally. It does not create accounts, mint dynamic short links, or track scans. Open https://useqr.co for the designer, dynamic codes that encode https://useqr.co/r/{code}, and billing.";
 
+type LocalToolAnnotations = {
+  readonly readOnlyHint: true;
+  readonly openWorldHint: false;
+};
+
+const localToolAnnotations: LocalToolAnnotations = {
+  readOnlyHint: true,
+  openWorldHint: false,
+};
+
+function readPackageVersion(packageJsonUrl: URL): string {
+  const raw: unknown = JSON.parse(
+    readFileSync(fileURLToPath(packageJsonUrl), "utf8"),
+  );
+  if (typeof raw !== "object" || raw === null || !("version" in raw)) {
+    throw new Error("package.json version missing");
+  }
+  const version = raw.version;
+  if (typeof version !== "string" || version.length === 0) {
+    throw new Error("package.json version missing");
+  }
+  return version;
+}
+
 const formatSchema = z.enum(["png", "svg"]).optional();
 const errorCorrectionSchema = z.enum(["L", "M", "Q", "H"]).optional();
 
 export function createMcpServer(): McpServer {
   const server = new McpServer(
-    { name: "useqr-mcp", version: "1.0.0" },
+    {
+      name: "useqr-mcp",
+      version: readPackageVersion(new URL("../package.json", import.meta.url)),
+    },
     { instructions: SERVER_INSTRUCTIONS },
   );
 
@@ -48,6 +77,7 @@ export function createMcpServer(): McpServer {
           "QR error correction L, M (default), Q, or H",
         ),
       },
+      annotations: localToolAnnotations,
     },
     async (args) => {
       const parsed = parseQrRequest(args);
@@ -92,6 +122,7 @@ export function createMcpServer(): McpServer {
           .optional()
           .describe("Optional http(s) URL to prefill in the designer."),
       },
+      annotations: localToolAnnotations,
     },
     async ({ url }) => {
       const link = designerUrl(url ?? "");
@@ -108,6 +139,7 @@ export function createMcpServer(): McpServer {
       description:
         "Explain how to create a trackable dynamic QR on useqr.co. This tool does not mint codes.",
       inputSchema: {},
+      annotations: localToolAnnotations,
     },
     async () => {
       return {
