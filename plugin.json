@@ -5,10 +5,12 @@
   "description": "Static QR PNG/SVG for agents, plus a link to the UseQR designer.",
   "author": {
     "name": "Aaron Te",
+    "email": "aaronjte@gmail.com",
     "url": "https://useqr.co"
   },
   "homepage": "https://useqr.co",
   "repository": "https://github.com/aaronte/useqr-mcp",
   "license": "MIT",
-  "keywords": ["mcp", "qr", "qr-code", "useqr", "generator"]
+  "keywords": ["mcp", "qr", "qr-code", "useqr", "generator", "grok", "cursor"],
+  "logo": "assets/logo.svg"
 }

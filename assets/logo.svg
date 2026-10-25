@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="755" viewBox="0 0 755 755" fill="none">
+  <title>UseQR mark</title>
+  <desc>Editable vector recreation from keyed photo. Flat brand colors; no embedded raster. Texture/AO omitted.</desc>
+
+  <!-- Tile squircle -->
+  <rect id="tile" x="4" y="10" width="747" height="735" rx="95" ry="95" fill="#EFEDE9"/>
+
+  <!-- Finder rings (evenodd outer-minus-inner) -->
+  <g id="finders" fill="#404243" fill-rule="evenodd">
+    <path id="finder-TL" d="M148,116 H312 A47,47 0 0 1 359,163 V314 A47,47 0 0 1 312,361 H148 A47,47 0 0 1 101,314 V163 A47,47 0 0 1 148,116 Z M174,167 H286 A20,20 0 0 1 306,187 V294 A20,20 0 0 1 286,314 H174 A20,20 0 0 1 154,294 V187 A20,20 0 0 1 174,167 Z"/>
+    <path id="finder-TR" d="M439,116 H603 A46,46 0 0 1 649,162 V315 A46,46 0 0 1 603,361 H439 A46,46 0 0 1 393,315 V162 A46,46 0 0 1 439,116 Z M466,167 H577 A20,20 0 0 1 597,187 V294 A20,20 0 0 1 577,314 H466 A20,20 0 0 1 446,294 V187 A20,20 0 0 1 466,167 Z"/>
+    <path id="finder-BL" d="M148,391 H312 A47,47 0 0 1 359,438 V592 A47,47 0 0 1 312,639 H148 A47,47 0 0 1 101,592 V438 A47,47 0 0 1 148,391 Z M174,442 H286 A20,20 0 0 1 306,462 V569 A20,20 0 0 1 286,589 H174 A20,20 0 0 1 154,569 V462 A20,20 0 0 1 174,442 Z"/>
+  </g>
+
+  <!-- Arrow: uniform stroke, round caps & joins, 45° shaft + orthogonal head -->
+  <path id="arrow"
+        d="M427,422 L614,422 L614,609 M614,422 L425.9096,610.0904"
+        stroke="#8D939A"
+        stroke-width="58"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+</svg>
